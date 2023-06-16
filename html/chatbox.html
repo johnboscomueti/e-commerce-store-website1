@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Reviews and Recommendations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .chat-box {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    .message-input {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .message-input input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .message-input button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .message-input button:hover {
+      background-color: #45a049;
+    }
+    .benefit-bar {
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .benefit-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .benefit-bar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <div class="benefit-bar">
+        <a href="../html/my login.html">LOGIN</a>
+        <a href="../html/homepage.html">HOMEPAGE</a>
+        <a href="../html/index.html">VIEW PRODUCTS</a>
+        <a href="../html/contacts.html">CONTACTS</a>
+        <a href="../html/cart.html">CART</a>
+        <a href="./about.html">ABOUT US</a>
+      </div>
+  <h1>Customer Reviews and Recommendations</h1>
+
+  <h2>Send Your Review and Image:</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" rows="4" cols="50"></textarea>
+
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Recommend Our Website:</h2>
+  <p>If you're satisfied with our products and services, please recommend our website to your friends and relatives.</p>
+
+  <h2>Chat Box:</h2>
+  <div class="chat-box">
+    <!-- Chat messages will be displayed here -->
+  </div>
+
+  <div class="message-input">
+    <input type="text" id="message" name="message">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    // JavaScript function to send a message in the chat box
+    function sendMessage() {
+      var messageInput = document.getElementById("message");
+      var message = messageInput.value;
+      var chatBox = document.querySelector(".chat-box");
+      var newMessage = document.createElement("p");
+      newMessage.textContent = message;
+      chatBox.appendChild(newMessage);
+      messageInput.value = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+body {
+background-color: burlywood;
+}
+.item{
+    width:fit-content;
+    padding: 30px 90px 90px 90px;
+    border: 6px black;
+    box-shadow: 20px 20px orangered;
+    border-radius: 50px;
+    position: relative;
+    background-color:whitesmoke;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+.con{
+    max-width: 400px;
+    background-color: whitesmoke;
+    padding: 30px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+header{
+    position: fixed;
+    top: 20px; /* Adjust the top value as needed */
+    left: 20px; /* Adjust the left value as needed */
+    background-color: gray;
+    padding: 10px;
+    color: #ffffff;
+    z-index: 999; /* Ensure the navigation appears above other elements */
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Messenger</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+     .benefit-bar {
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .benefit-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .benefit-bar a:hover {
+      text-decoration: underline;
+    }
+    /* Styles for the messaging container */
+    .messenger-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styles for the message input and button */
+    .message-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    .send-button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+        /* Styles for the reporting options container */
+        .report-options {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styles for the report options */
+    .report-option {
+      margin-bottom: 10px;
+    }
+
+    .report-option label {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .report-option input[type="radio"] {
+      vertical-align: middle;
+    }
+
+    .report-option input[type="text"] {
+      display: none;
+      margin-top: 5px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    #floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #floating-button:hover {
+      background-color: #c2185b;}
+      .floating-icons a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+.floating-icons a i {
+  font-size: 24px;
+}
+  </style>
+</head>
+<body>
+  <div class="floating-icons">
+    <a href="https://www.instagram.com/muetikisilu/">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com/@muetijohnbosco">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/johnbosco-mueti-15575a21b">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+  <div class="scroll">
+  
+    <!-- Content of the page -->
+    <!-- Add more content here -->
+  
+    <!-- Floating button -->
+    <button id="floating-button" onclick="scrollToBottom()">Scroll Down</button>
+  
+    <script>
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    </script>
+  <div class="benefit-bar">
+    <a href="../html/my login.html">LOGIN</a>
+    <a href="../html/index.html">VIEW PRODUCTS</a>
+    <a href="../html/homepage.html">HOMEPAGE</a>
+    <a href="../html/cart.html">CART</a>
+    <a href="../html/chatbox.html">CHATBOX</a>
+    <a href="./about.html">ABOUT US</a>
+  </div>
+  <div class="messenger-container">
+    <h2>Website Messenger</h2>
+    <textarea class="message-input" id="messageInput" placeholder="Type your message here"></textarea>
+    <button class="send-button" onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    function sendMessage() {
+      var message = document.getElementById("messageInput").value;
+      var email = "muetijohnbosco35@gmail.com";
+      var subject = "New Message from Website Messenger";
+      var body = "Message: " + message;
+
+      // Construct the mailto link
+      var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      // Open the mail client with the pre-filled message
+      window.location.href = mailtoLink;
+    }
+  </script>
+    <div class="report-options">
+      <h2>Report a Problem</h2>
+      <div class="report-option">
+        <label>
+          <input type="radio" name="reportType" value="option1" onchange="toggleInputField()"> Option 1
+        </label>
+        <input type="text" id="option1Details" placeholder="Enter details">
+      </div>
+      <div class="report-option">
+        <label>
+          <input type="radio" name="reportType" value="option2" onchange="toggleInputField()"> Option 2
+        </label>
+        <input type="text" id="option2Details" placeholder="Enter details">
+      </div>
+      <div class="report-option">
+        <label>
+          <input type="radio" name="reportType" value="option3" onchange="toggleInputField()"> Option 3
+        </label>
+        <input type="text" id="option3Details" placeholder="Enter details">
+      </div>
+      <div class="report-option">
+        <label>
+          <input type="radio" name="reportType" value="option4" onchange="toggleInputField()"> Option 4
+        </label>
+        <input type="text" id="option4Details" placeholder="Enter details">
+      </div>
+      <div class="report-option">
+        <label>
+          <input type="radio" name="reportType" value="option5" onchange="toggleInputField()"> Option 5
+        </label>
+        <input type="text" id="option5Details" placeholder="Enter details">
+      </div>
+      <button onclick="submitReport()">Submit</button>
+    </div>
+  
+    <script>
+      function toggleInputField() {
+        var reportOptions = document.getElementsByName("reportType");
+        var inputFields = document.querySelectorAll(".report-option input[type='text']");
+  
+        for (var i = 0; i < reportOptions.length; i++) {
+          if (reportOptions[i].checked) {
+            inputFields[i].style.display = "block";
+          } else {
+            inputFields[i].style.display = "none";
+          }
+        }
+      }
+  
+      function submitReport() {
+        var reportOptions = document.getElementsByName("reportType");
+        var details = "";
+  
+        for (var i = 0; i < reportOptions.length; i++) {
+          if (reportOptions[i].checked) {
+            var inputField = document.getElementById("option" + (i + 1) + "Details");
+            details = inputField.value;
+            break;
+          }
+        }
+  
+        // You can customize the submission process here, e.g., sending the details via email or making an API call
+  
+        alert("Problem reported: " + details);
+      }
+    </script>
+</body>
+</html>

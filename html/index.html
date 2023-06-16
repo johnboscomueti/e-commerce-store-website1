@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>johnte ONLINE STOre</title>
+</head>
+
+<body>
+  <div class="image-container">
+    <img src="../images/ecommerce-solutions.png" alt="Your Image">
+  </div>
+
+<div id="search-icon">&#128269;</div>
+
+<div class="search-container">
+  <input type="text" id="search-input" class="search-input" placeholder="Search...">
+  <div class="search-results" id="search-results-container"></div>
+</div>
+
+<!-- Content of the page -->
+
+
+<script>
+  const searchIcon = document.getElementById("search-icon");
+  const searchContainer = document.querySelector(".search-container");
+  const searchInput = document.getElementById("search-input");
+  const searchResultsContainer = document.getElementById("search-results-container");
+  const searchableItems = document.getElementsByClassName("searchable");
+
+  searchIcon.addEventListener("click", toggleSearchContainer);
+  searchInput.addEventListener("input", searchItems);
+
+  function toggleSearchContainer() {
+    searchContainer.style.display = searchContainer.style.display === "none" ? "block" : "none";
+  }
+
+  function searchItems() {
+    const searchTerm = searchInput.value.toLowerCase();
+    let searchResults = [];
+
+    for (let i = 0; i < searchableItems.length; i++) {
+      const itemText = searchableItems[i].textContent.toLowerCase();
+
+      if (itemText.includes(searchTerm)) {
+        searchResults.push(searchableItems[i].textContent);
+      }
+    }
+
+    renderSearchResults(searchResults);
+  }
+
+  function renderSearchResults(results) {
+    searchResultsContainer.innerHTML = "";
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const resultElement = document.createElement("div");
+        resultElement.classList.add("search-result");
+        resultElement.textContent = result;
+        searchResultsContainer.appendChild(resultElement);
+      });
+    } else {
+      const noResultsElement = document.createElement("div");
+      noResultsElement.classList.add("search-result");
+      noResultsElement.textContent = "No results found.";
+      searchResultsContainer.appendChild(noResultsElement);
+    }
+  }
+</script>
+  <div class="scroll">
+  
+    <!-- Content of the page -->
+    <!-- Add more content here -->
+  
+    <!-- Floating button -->
+    <button id="floating-button" onclick="scrollToBottom()">Scroll Down</button>
+  
+    <script>
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    </script>
+</div>
+  <div class="floating-icons">
+    <a href="https://www.instagram.com/muetikisilu/">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com/@muetijohnbosco">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/johnbosco-mueti-15575a21b">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+  <header>
+
+  <div class="logo">
+    <img src="../images/logo 1.jpg"  class="logo 1">
+</div>
+
+
+    <div class="nav">
+  
+        <li><a href="../html/my login.html">LOGIN</a></li>
+        <li><a href="../html/homepage.html">HOMEPAGE</a></li>
+        <li><a href="../html/cart.html">CART</a></li>
+        <li><a href="../html/chatbox.html">CHATBOX</a></li>
+        <li><a href="../html/contacts.html">CONTACT US</a></li>
+        <li><a href="../html/about.html">ABOUT US</a></li>
+      </div>
+</header>
+    <div class="intro">
+     <h1>view our PRODUCTS</h1>
+          <h2>
+            Up to</br>
+            <span class="dis">30% 
+              Discount</span></br>
+            on This <br />
+            New Year Season
+          </h2>
+          <h3>From 1st Jan to 31st Jan</h3>
+          <div class="CART">
+          <a href="../html/homepage.html" class="btn">SHOP NOW</a>
+        </div>
+      </div>
+  </header>
+
+  <!-- New Arrivals -->
+  <section class="section">
+    <div class="h">
+      <h1><span>New</span> Arrivals</h1>
+    </div>
+    <div class="item">
+      <img src="../images/handbag.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">women leather handbag</p>
+        <p id="item-price">5000</p>
+        <p id="item-color">pink</p>
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/handbag.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">women leather handbag</p>
+        <p id="item-price">5000</p>
+        <p id="item-color">pink</p>
+      </div>
+        
+      </div>
+      <div class="item">
+        <img src="../images/belt.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+        <div class="item-info">
+          <p id="item-name">leather belt</p>
+          <p id="item-price">500</p>
+          <p id="item-color">Black</p>
+          
+        </div>
+      </div>
+        <div class="item">
+          <img src="../images/wallet.jpeg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+          <div class="item-info">
+            <p id="item-name">leather wallet</p>
+            <p id="item-price">150</p>
+            <p id="item-color">brown</p>
+            
+          </div>
+        </div>
+        
+        <div class="item">
+            <img src="../images/sandals.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+            <div class="item-info">
+              <p id="item-name">women sandals</p>
+              <p id="item-price">200</p>
+              <p id="item-color">Black</p>
+              
+            </div>
+          </div>
+
+        </section>
+
+<div class="add item">
+  <form id="product-form">
+    <input type="text" id="product-name" placeholder="Product Name" required />
+    <input type="number" id="product-price" placeholder="Product Price" required />
+    <input type="file" id="product-image" accept="image/*" required />
+    <button type="submit">Add to E-commerce</button>
+  </form>
+  
+  <div id="cart-container">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total Price: Ksh 0</p>
+  </div>
+  
+  <script>
+    const productForm = document.getElementById("product-form");
+    const cartItemsElement = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+  
+    let cartItems = [];
+    let totalPrice = 0;
+  
+    productForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+  
+      const productName = document.getElementById("product-name").value;
+      const productPrice = Number(document.getElementById("product-price").value);
+      const productImage = document.getElementById("product-image").files[0];
+  
+      const reader = new FileReader();
+      reader.onload = function() {
+        const productImgUrl = reader.result;
+  
+        const product = { name: productName, price: productPrice, image: productImgUrl };
+        cartItems.push(product);
+        totalPrice += productPrice;
+        updateCart();
+      };
+      reader.readAsDataURL(productImage);
+  
+      // Reset the form fields
+      productForm.reset();
+    });
+  
+    function updateCart() {
+      cartItemsElement.innerHTML = "";
+  
+      cartItems.forEach((item) => {
+        const li = document.createElement("li");
+        const img = document.createElement("img");
+        const name = document.createElement("span");
+        const price = document.createElement("span");
+        const addToCartBtn = document.createElement("button");
+  
+        img.src = item.image;
+        img.alt = item.name;
+        img.width = 50;
+        img.height = 50;
+  
+        name.textContent = item.name;
+        price.textContent = `Ksh ${item.price}`;
+  
+        addToCartBtn.textContent = "Add to Cart";
+        addToCartBtn.addEventListener("click", function() {
+          addToCart(item);
+        });
+  
+        li.appendChild(img);
+        li.appendChild(name);
+        li.appendChild(price);
+        li.appendChild(addToCartBtn);
+        cartItemsElement.appendChild(li);
+      });
+  
+      totalPriceElement.textContent = `Total Price: Ksh ${totalPrice}`;
+    }
+  
+    function addToCart(product) {
+      cartItems.push(product);
+      totalPrice += product.price;
+      updateCart();
+    }
+    
+  </script>
+      
+      </div>
+  <section class="section">
+    <div class="h">
+      <h1>Popular <span>Products</span></h1>
+    </div>
+    <div class="item">
+      <img src="../images/retro j1" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">retro j1</p>
+        <p id="item-price">4700</p>
+        <p id="item-color">retro</p>
+        
+      </div>
+    </div>
+
+
+    <div class="item">
+      <img src="../images/red j1.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">3600</p>
+        <p id="item-color">red</p>
+        
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="../images/og blue j1.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">3600</p>
+        <p id="item-color">blue</p>
+        
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="../images/red jordan.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">4000</p>
+        <p id="item-color">red</p>
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/blue handbag.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">3600</p>
+        <p id="item-color">blue</p>
+        
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="../images/bsandals.jpg" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">3600</p>
+        <p id="item-color">Black</p>
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/p handbag" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">3600</p>
+        <p id="item-color">purple</p>
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/mini wallet.jfif" alt="" onclick="showInfo('5000', 'Black', 'Women Handbag Leather')" />
+      <div class="item-info">
+        <p id="item-name">leather</p>
+        <p id="item-price">500</p>
+        <p id="item-color">brown</p>
+        
+      </div>
+    </div>
+    
+
+  </section>
+        <section id="footer">
+            
+            <div class="foot">
+                <ul>
+                    <li><a href="../html/my login.html">LOGIN</a></li>
+                    <li><a href="../html/about.html">ABOUT US</a></li>
+                    <li><a href="../html/contacts.html">CONTACT US</a></li>
+        
+                </ul>
+            </div>
+        </section>
+        
+      
+</body>
+
+</html>

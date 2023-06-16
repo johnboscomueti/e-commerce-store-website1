@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <title>Online Store</title>
+  <style>
+    body{ 
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: orange;
+  background-color: blue;
+  margin: 0;
+  padding: 20px;
+ 
+  border-top: 5px solid #007bff;
+  border-bottom: 5px solid #007bff;
+  margin: 0;
+  padding: 20px;
+}
+.CART{display: inline-block;
+  padding: 20px;
+  font-size: 24px;
+  background-color: #ffef0d;
+  color: #f00707;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  animation: dance 1s infinite;
+}
+
+  
+    header{  background-color: #333333;
+  padding: 20px;
+  color:black;
+}
+
+    #floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #floating-button:hover {
+      background-color: #c2185b;
+    }
+    #search-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #search-icon:hover {
+      background-color: #c2185b;
+    }
+
+    .search-container {
+      position: fixed;
+      top: 20px;
+      right: 80px;
+      display: none;
+    }
+
+    .search-input {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .search-results {
+      margin-top: 10px;
+    }
+
+    .search-result {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    #floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #floating-button:hover {
+      background-color: #c2185b;
+    }
+    .intro{
+  width: 1000px;
+  height: 500px;
+  background-color: red;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration-style:wavy;
+  border-top: 5px solid #007bff;
+  border-bottom: 5px solid #007bff;
+  margin: 0;
+  padding: 20px;
+  }
+  .benefit-bar {
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .benefit-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .benefit-bar a:hover {
+      text-decoration: underline;
+    }
+  .intro-content {
+    height: 100%;
+  }
+      /* Style for the floating cart */
+      .floating-cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .floating-icons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .floating-icons a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        .floating-icons a i {
+            font-size: 24px;
+        }
+  </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <a href="https://www.instagram.com/muetikisilu/">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@muetijohnbosco">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/johnbosco-mueti-15575a21b">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+    <div class="benefit-bar">
+        <a href="../html/my login.html">LOGIN</a>
+        <a href="../html/index.html">VIEW PRODUCTS</a>
+        <a href="../html/contacts.html">CONTACTS</a>
+        <a href="../html/chatbox.html">CHATBOX</a>
+        <a href="../html/cart.html">CART</a>
+        <a href="./about.html">ABOUT US</a>
+      </div>
+    
+      <!-- Content of the page -->
+
+    <div class="scroll">
+  
+        <!-- Content of the page -->
+        <!-- Add more content here -->
+      
+        <!-- Floating button -->
+        <button id="floating-button" onclick="scrollToBottom()">Scroll Down</button>
+      
+        <script>
+          function scrollToBottom() {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth"
+            });
+          }
+        </script>
+    </div>
+<header>
+  <h1>johnte ONLINE STORE</h1>
+</div>
+  <div class="intro">
+    <h1>view our PRODUCTS</h1>
+         <h2>
+           Up to</br>
+           <span class="dis">30% 
+             Discount</span></br>
+           on This <br />
+           New Year Season
+         </h2>
+         <h3>From 1st Jan to 31st Jan</h3>
+         <div class="CART">
+         <a href="../html/cart.html" class="btn">SHOP NOW</a>
+       </div>
+     </div>
+</header>
+<h1>Floating Search Icon</h1>
+
+<div id="search-icon">&#128269;</div>
+
+<div class="search-container">
+  <input type="text" id="search-input" class="search-input" placeholder="Search...">
+  <div class="search-results" id="search-results-container"></div>
+</div>
+
+<!-- Content of the page -->
+
+
+<script>
+  const searchIcon = document.getElementById("search-icon");
+  const searchContainer = document.querySelector(".search-container");
+  const searchInput = document.getElementById("search-input");
+  const searchResultsContainer = document.getElementById("search-results-container");
+  const searchableItems = document.getElementsByClassName("searchable");
+
+  searchIcon.addEventListener("click", toggleSearchContainer);
+  searchInput.addEventListener("input", searchItems);
+
+  function toggleSearchContainer() {
+    searchContainer.style.display = searchContainer.style.display === "none" ? "block" : "none";
+  }
+
+  function searchItems() {
+    const searchTerm = searchInput.value.toLowerCase();
+    let searchResults = [];
+
+    for (let i = 0; i < searchableItems.length; i++) {
+      const itemText = searchableItems[i].textContent.toLowerCase();
+
+      if (itemText.includes(searchTerm)) {
+        searchResults.push(searchableItems[i].textContent);
+      }
+    }
+
+    renderSearchResults(searchResults);
+  }
+
+  function renderSearchResults(results) {
+    searchResultsContainer.innerHTML = "";
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const resultElement = document.createElement("div");
+        resultElement.classList.add("search-result");
+        resultElement.textContent = result;
+        searchResultsContainer.appendChild(resultElement);
+      });
+    } else {
+      const noResultsElement = document.createElement("div");
+      noResultsElement.classList.add("search-result");
+      noResultsElement.textContent = "No results found.";
+      searchResultsContainer.appendChild(noResultsElement);
+    }
+  }
+</script>
+<div id="container1">
+    <div class="product-row">
+      <h2>belt</h2>
+      <img src="../images/belt.jpg" alt="Product 1">
+      <p>Price: 400 Ksh</p>
+      <p>Name: Product 1</p>
+      <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+      <h2>handbag</h2>
+      <img src="../images/blue handbag.jpg" alt="Product 2">
+      <p>Price: 200 Ksh</p>
+      <p>Name: Product 2</p>
+      <button onclick="addToCart('Product 2', 200)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+       <div class="product-row">
+      <h2>belt</h2>
+      <img src="../images/belt.jpg" alt="Product 1">
+      <p>Price: 400 Ksh</p>
+      <p>Name: Product 1</p>
+      <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+       <div class="product-row">
+      <h2>belt</h2>
+      <img src="../images/belt.jpg" alt="Product 1">
+      <p>Price: 400 Ksh</p>
+      <p>Name: Product 1</p>
+      <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-row">
+      <h2>belt</h2>
+      <img src="../images/belt.jpg" alt="Product 1">
+      <p>Price: 400 Ksh</p>
+      <p>Name: Product 1</p>
+      <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+    </div>
+    <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div> <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div> <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+      <div class="product-row">
+        <h2>belt</h2>
+        <img src="../images/belt.jpg" alt="Product 1">
+        <p>Price: 400 Ksh</p>
+        <p>Name: Product 1</p>
+        <button onclick="addToCart('Product 1', 400)">Add to Cart</button>
+      </div>
+    <!-- Add more product rows here -->
+  </div>
+
+  <div id="container2" class="floating-cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <button onclick="calculateTotal()">Total</button>
+  </div>
+
+  <script>
+    var cartItems = [];
+
+    function addToCart(name, price) {
+      cartItems.push({ name: name, price: price });
+      displayCartItems();
+    }
+
+    function displayCartItems() {
+      var cartItemsDiv = document.getElementById("cart-items");
+      cartItemsDiv.innerHTML = "";
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemDiv = document.createElement("div");
+        itemDiv.innerHTML = item.name + " - " + item.price + " Ksh";
+        cartItemsDiv.appendChild(itemDiv);
+      }
+    }
+
+    function calculateTotal() {
+      var total = 0;
+      for (var i = 0; i < cartItems.length; i++) {
+        total += cartItems[i].price;
+      }
+      alert("Total: " + total + " Ksh");
+      window.location.href = "../html/cart.html";
+    }
+  </script>
+</body>
+</html>

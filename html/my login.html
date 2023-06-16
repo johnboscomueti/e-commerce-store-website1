@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<title>login into my STOre</title>
+<link rel="stylesheet" href="../css/mylogincss.css">
+<script>
+    function checkPassword() {
+      var password = document.getElementById('password').value;
+
+      // Check if the password is correct
+      if (password === '20022003') {
+        window.location.href = '../html/index.html'; // Redirect to index.html if password is correct
+      } else {
+        window.location.href = '../html/registration page.html'; // Redirect to registration_page.html if password is incorrect
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="floating-icons">
+    <a href="https://www.instagram.com/muetikisilu/">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com/@muetijohnbosco">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/johnbosco-mueti-15575a21b">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+    <div class="login title">
+    <h1>login </h1>
+  </div>
+    
+    <form>
+ <div class="login avatar">
+    <img src="../images/download.png" alt="Avatar" class="avatar">
+  </div>
+  <div class="form-control">
+
+    <form>
+        <div class="form-control">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <br><br>
+    </div>
+    <div class="form-control">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <br><br>
+    </div>
+    <div class="form-control">
+        <input type="button" value="Login" onclick="checkPassword()">
+    </div>
+
+
+    </form>
+    <footer>
+        <p>&copy; 2023 jonte  Store. All rights reserved.</p>
+    </footer>
+    
+</body>
+  
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Form</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Payment form styles */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="button"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* M-Pesa options styles */
+#mpesaOptions {
+  display: none;
+}
+
+/* Cash options styles */
+#cashOptions {
+  display: none;
+}
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+    }
+
+    .rating > span {
+      display: inline-block;
+      position: relative;
+      width: 1.1em;
+    }
+
+    .rating > span:hover:before,
+    .rating > span:hover ~ span:before {
+      content: "\2605";
+      position: absolute;
+      color: gold;
+    }
+
+    .selected-stars:before {
+      content: "\2605";
+      position: absolute;
+      color: gold;
+    }
+    #floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #floating-button:hover {
+      background-color: #c2185b;}
+      .benefit-bar {
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .image-container {
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+  }
+  
+  .image-container img {
+    width: 500px;
+    height: 500px;
+  }
+    .benefit-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .benefit-bar a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="../images/mpesa.jpg" alt="Your Image">
+  </div>
+  <div class="scroll">
+  
+    <!-- Content of the page -->
+    <!-- Add more content here -->
+  
+    <!-- Floating button -->
+    <button id="floating-button" onclick="scrollToBottom()">Scroll Down</button>
+  
+    <script>
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    </script>
+  <div class="benefit-bar">
+    <a href="../html/my login.html">LOGIN</a>
+    <a href="../html/index.html">VIEW PRODUCTS</a>
+    <a href="../html/homepage.html">HOMEPAGE</a>
+    <a href="../html/chatbox.html">CHATBOX</a>
+    <a href="../html/contacts.html">CONTACTS</a>
+    <a href="./about.html">ABOUT US</a>
+  </div>
+
+  <h1>Payment Form</h1>
+  <form onsubmit="return submitForm()">
+    <label for="payment">Choose a payment method:</label><br>
+    <input type="radio" id="mpesa" name="payment" value="mpesa">
+    <label for="mpesa">M-Pesa</label><br>
+    <input type="radio" id="cash" name="payment" value="cash">
+    <label for="cash">Cash</label><br><br>
+
+    <label for="reconfirm">Reconfirm your payment:</label><br>
+    <input type="radio" id="yes" name="reconfirm" value="yes">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="reconfirm" value="no">
+    <label for="no">No</label><br><br>
+
+    <label for="feedback">Do you want to provide feedback?</label><br>
+    <input type="radio" id="rate" name="feedback" value="rate">
+    <label for="rate">Rate</label><br>
+    <input type="radio" id="report" name="feedback" value="report">
+    <label for="report">Report a problem</label><br>
+    <input type="radio" id="confirm" name="feedback" value="confirm">
+    <label for="confirm">Confirm payment</label><br><br>
+
+    <div class="rating">
+      <span onclick="rate(5)">&#9734;</span>
+      <span onclick="rate(4)">&#9734;</span>
+      <span onclick="rate(3)">&#9734;</span>
+      <span onclick="rate(2)">&#9734;</span>
+      <span onclick="rate(1)">&#9734;</span>
+    </div><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    function submitForm() {
+      var payment = document.querySelector('input[name="payment"]:checked');
+      var reconfirm = document.querySelector('input[name="reconfirm"]:checked');
+      var feedback = document.querySelector('input[name="feedback"]:checked');
+
+      var messageDiv = document.getElementById("message");
+      messageDiv.innerHTML = "";
+
+      if (!payment || !reconfirm || !feedback) {
+        messageDiv.innerHTML = "Please fill in all fields.";
+        return false;
+      }
+
+      var paymentMethod = payment.value;
+      var reconfirmPayment = reconfirm.value;
+      var feedbackOption = feedback.value;
+
+      var message = "Payment Method: " + paymentMethod + "<br>";
+      message += "Reconfirm Payment: " + reconfirmPayment + "<br>";
+      message += "Feedback Option: " + feedbackOption + "<br>";
+
+      if (feedbackOption === "rate") {
+        var ratingStars = document.getElementsByClassName("selected-stars");
+        var rating = ratingStars.length;
+        message += "Rating: " + rating + " stars";
+      } else if (feedbackOption === "report") {
+        window.location.href = "../html/contacts.html";
+        return false;
+      }
+
+      messageDiv.innerHTML = message;
+      return false;
+    }
+
+    function rate(stars) {
+      var ratingStars = document.getElementsByClassName("rating")[0].children;
+      for (var i = 0; i < ratingStars.length; i++) {
+        if (i < stars) {
+          ratingStars[i].className = "selected-stars";
+        } else {
+          ratingStars[i].className = "";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
